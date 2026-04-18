@@ -61,9 +61,15 @@
     
         // 创建音乐播放器界面
         musicPage = new MusicPlayerWidget(this);
+        connect(musicPage, &MusicPlayerWidget::returnToMain, [=](){
+            stackedWidget->setCurrentWidget(mainPage);
+        });
 
         // 创建天气界面
         weatherPage = new Httpgetweather(this);
+        connect(weatherPage, &Httpgetweather::returnToMain, [=](){
+            stackedWidget->setCurrentWidget(mainPage);
+        });
         
         // 将主页面和音乐页面添加到堆叠控件
         stackedWidget->addWidget(mainPage);  // 主页面作为第一个页面

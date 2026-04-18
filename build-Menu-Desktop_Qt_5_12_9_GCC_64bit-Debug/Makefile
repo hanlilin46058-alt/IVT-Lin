@@ -56,7 +56,8 @@ SOURCES       = ../Menu/MusicPlayerWidget.cpp \
 		../Menu/httpgetweather.cpp \
 		../Menu/main.cpp \
 		../Menu/mainwindow.cpp \
-		../Menu/mypushbutton.cpp qrc_res.cpp \
+		../Menu/mypushbutton.cpp \
+		../Menu/radarwidget.cpp qrc_res.cpp \
 		moc_MusicPlayerWidget.cpp \
 		moc_httpgetweather.cpp \
 		moc_mainwindow.cpp \
@@ -66,6 +67,7 @@ OBJECTS       = MusicPlayerWidget.o \
 		main.o \
 		mainwindow.o \
 		mypushbutton.o \
+		radarwidget.o \
 		qrc_res.o \
 		moc_MusicPlayerWidget.o \
 		moc_httpgetweather.o \
@@ -268,11 +270,13 @@ DIST          = /opt/Qt5.12.9/5.12.9/gcc_64/mkspecs/features/spec_pre.prf \
 		../Menu/Menu.pro ../Menu/MusicPlayerWidget.h \
 		../Menu/httpgetweather.h \
 		../Menu/mainwindow.h \
-		../Menu/mypushbutton.h ../Menu/MusicPlayerWidget.cpp \
+		../Menu/mypushbutton.h \
+		../Menu/radarwidget.h ../Menu/MusicPlayerWidget.cpp \
 		../Menu/httpgetweather.cpp \
 		../Menu/main.cpp \
 		../Menu/mainwindow.cpp \
-		../Menu/mypushbutton.cpp
+		../Menu/mypushbutton.cpp \
+		../Menu/radarwidget.cpp
 QMAKE_TARGET  = Menu
 DESTDIR       = 
 TARGET        = Menu
@@ -693,8 +697,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../Menu/res.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /opt/Qt5.12.9/5.12.9/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Menu/MusicPlayerWidget.h ../Menu/httpgetweather.h ../Menu/mainwindow.h ../Menu/mypushbutton.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Menu/MusicPlayerWidget.cpp ../Menu/httpgetweather.cpp ../Menu/main.cpp ../Menu/mainwindow.cpp ../Menu/mypushbutton.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Menu/MusicPlayerWidget.h ../Menu/httpgetweather.h ../Menu/mainwindow.h ../Menu/mypushbutton.h ../Menu/radarwidget.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Menu/MusicPlayerWidget.cpp ../Menu/httpgetweather.cpp ../Menu/main.cpp ../Menu/mainwindow.cpp ../Menu/mypushbutton.cpp ../Menu/radarwidget.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Menu/mainwindow.ui $(DISTDIR)/
 
 
@@ -2389,6 +2393,9 @@ mypushbutton.o: ../Menu/mypushbutton.cpp ../Menu/mypushbutton.h \
 		/opt/Qt5.12.9/5.12.9/gcc_64/include/QtCore/qabstractanimation.h \
 		/opt/Qt5.12.9/5.12.9/gcc_64/include/QtGui/QMouseEvent
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mypushbutton.o ../Menu/mypushbutton.cpp
+
+radarwidget.o: ../Menu/radarwidget.cpp ../Menu/radarwidget.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o radarwidget.o ../Menu/radarwidget.cpp
 
 qrc_res.o: qrc_res.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_res.o qrc_res.cpp

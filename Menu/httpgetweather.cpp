@@ -48,10 +48,17 @@ void Httpgetweather::initUI()
     queryButton->setFixedSize(120, 40);
     queryButton->setStyleSheet("font-size:16px;");
     connect(queryButton, &QPushButton::clicked, this, &Httpgetweather::onQueryButtonClicked);
+
+    // 创建返回主菜单按钮
+    returnButton = new QPushButton("返回主菜单", this);
+    returnButton->setFixedSize(120, 40);
+    returnButton->setStyleSheet("font-size:16px;");
+    connect(returnButton, &QPushButton::clicked, this, &Httpgetweather::returnToMain);
     
     // 添加到顶部布局
     topLayout->addWidget(cityComboBox);
     topLayout->addWidget(queryButton);
+    topLayout->addWidget(returnButton);
     topLayout->addStretch();
     
     // 创建天气信息布局

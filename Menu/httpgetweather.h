@@ -19,6 +19,9 @@ public:
     Httpgetweather(QWidget *parent = nullptr);
     ~Httpgetweather();
 
+signals:
+    void returnToMain();
+
 private slots:
     void onQueryButtonClicked();
     void onNetworkReplyFinished(QNetworkReply *reply);
@@ -28,6 +31,8 @@ private:
     QComboBox *cityComboBox;
     // 查询按钮
     QPushButton *queryButton;
+    // 返回主菜单按钮
+    QPushButton *returnButton;
     // 天气信息标签数组
     QLabel *dayLabels[5];      // 星期标签
     QLabel *dateLabels[5];      // 日期标签

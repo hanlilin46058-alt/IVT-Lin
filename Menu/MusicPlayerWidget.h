@@ -30,6 +30,9 @@ public:
     // 析构函数：释放资源
     ~MusicPlayerWidget() override;
 
+signals:
+    void returnToMain();
+
 // 私有槽函数：按钮点击、播放器状态更新
 private slots:
     void btn_play_clicked();                // 播放/暂停

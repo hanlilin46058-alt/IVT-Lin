@@ -168,6 +168,9 @@ void MusicPlayerWidget::musicLayout()
     // 播放按钮、收藏按钮支持选中/取消状态（可按下/弹起）
     pushButton[1]->setCheckable(true);
     pushButton[3]->setCheckable(true);
+    // 菜单按钮作为返回主菜单按钮
+    pushButton[5]->setToolTip(tr("返回主菜单"));
+    connect(pushButton[5], &QPushButton::clicked, this, &MusicPlayerWidget::returnToMain);
 
     // ====================== 最外层水平布局：左右排版 ======================
     vWidget[0]->setMinimumSize(310, 480);    // 左侧区域最小尺寸
